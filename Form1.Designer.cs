@@ -33,6 +33,8 @@
             this.BtnReset = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -140,8 +142,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
+            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -195,6 +196,24 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controls";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(113, 65);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(83, 20);
+            this.label23.TabIndex = 4;
+            this.label23.Text = "Reset Form";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(113, 30);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(95, 20);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "Solve Puzzle!";
             // 
             // groupBox2
             // 
@@ -1194,7 +1213,8 @@
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1});
+            this.toolStripStatusLabel1,
+            this.toolStripStatusLabel2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 555);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 26);
@@ -1207,23 +1227,13 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(34, 20);
             this.toolStripStatusLabel1.Text = "Idle";
             // 
-            // label22
+            // toolStripStatusLabel2
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(113, 30);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(95, 20);
-            this.label22.TabIndex = 4;
-            this.label22.Text = "Solve Puzzle!";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(113, 65);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(83, 20);
-            this.label23.TabIndex = 4;
-            this.label23.Text = "Reset Form";
+            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(712, 20);
+            this.toolStripStatusLabel2.Spring = true;
+            this.toolStripStatusLabel2.Text = "Sudoku Solver - Mehdi Salmanzadeh";
+            this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
             // 
             // Form1
             // 
@@ -1369,5 +1379,6 @@
         private ToolStripStatusLabel toolStripStatusLabel1;
         private Label label23;
         private Label label22;
+        private ToolStripStatusLabel toolStripStatusLabel2;
     }
 }

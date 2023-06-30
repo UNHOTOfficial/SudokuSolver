@@ -15,6 +15,7 @@ namespace SudokuSolver
                     if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
                     {
                         textBox.Text = sudokuPuzzles[puzzleIndex, row, col].ToString();
+                        textBox.ReadOnly = false;
                     }
                     UpdateStatusLabel("Loading Puzzle...");
                 }
@@ -122,20 +123,53 @@ namespace SudokuSolver
         }
         private void SolveButton_Click(object sender, EventArgs e)
         {
-            // Read the input grid from the text boxes
-            ReadGrid();
-
-            // Solve the Sudoku puzzle
-            if (grid.Solve())
+            bool inputsStatus = CheckInputs();
+            if (inputsStatus == true)
             {
-                UpdateGrid();
-                MessageBox.Show("Sudoku puzzle solved successfully!", "Sudoku Solver");
+                // Read the input grid from the text boxes
+                ReadGrid();
+
+                // Solve the Sudoku puzzle
+                if (grid.Solve())
+                {
+                    UpdateGrid();
+                    MessageBox.Show("Sudoku puzzle solved successfully!", "Sudoku Solver");
+                }
+                else
+                {
+                    MessageBox.Show("No solution exists for the given puzzle.", "Sudoku Solver");
+                }
             }
             else
             {
-                MessageBox.Show("No solution exists for the given puzzle.", "Sudoku Solver");
+                MessageBox.Show("Inputs can't be greater than 9.");
             }
         }
+
+        private bool CheckInputs()
+        {
+            for (int row = 0; row < 9; row++)
+            {
+                for (int col = 0; col < 9; col++)
+                {
+                    TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
+                    if (textBox?.Text != null && textBox.Text != "")
+                    {
+                        if (!int.TryParse(textBox.Text, out int value) || value > 9)
+                        {
+                            return false; // Invalid input found, return false immediately
+                        }
+                    }
+                    else
+                    {
+                        // Empty or null input found, return false immediately
+                    }
+                }
+            }
+
+            return true; // No invalid inputs found, return true
+        }
+
 
         private void ReadGrid()
         {
@@ -250,6 +284,17 @@ namespace SudokuSolver
             }
             UpdateStatusLabel("Idle");
 
+        }
+
+        private void MenuItemSolver_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
+        {
+            string url = "https://github.com/UNHOTOfficial/SudokuSolver";
+            System.Diagnostics.Process.Start(url);
         }
     }
 }
