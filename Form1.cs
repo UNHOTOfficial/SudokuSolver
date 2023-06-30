@@ -3,14 +3,21 @@ namespace SudokuSolver
 
     public partial class Form1 : Form
     {
-        private int[,] grid = new int[9, 9];
+        private Sudoku grid;
 
         public Form1()
         {
             InitializeComponent();
+            grid = new Sudoku();
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+            InitializeTextBoxes();
+           
+        }
+
+        private void InitializeTextBoxes()
         {
             for (int row = 0; row < 9; row++)
             {
@@ -18,7 +25,6 @@ namespace SudokuSolver
                 {
                     if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
                     {
-
                         textBox.Font = new Font("Roboto", 9, FontStyle.Bold);
                         textBox.TextAlign = HorizontalAlignment.Center;
                     }
@@ -29,16 +35,14 @@ namespace SudokuSolver
                 }
             }
         }
-
         private void SolveButton_Click(object sender, EventArgs e)
         {
             // Read the input grid from the text boxes
             ReadGrid();
 
             // Solve the Sudoku puzzle
-            if (SolveSudoku(0, 0))
+            if (grid.Solve())
             {
-                // If a solution is found, update the text boxes with the solved grid
                 UpdateGrid();
                 MessageBox.Show("Sudoku puzzle solved successfully!", "Sudoku Solver");
             }
@@ -57,11 +61,11 @@ namespace SudokuSolver
                     TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
                     if (!string.IsNullOrEmpty(textBox?.Text))
                     {
-                        grid[row, col] = int.Parse(textBox.Text);
+                        grid.SetCell(row, col, int.Parse(textBox.Text));
                     }
                     else
                     {
-                        grid[row, col] = 0;
+                        grid.SetCell(row, col, 0);
                     }
                 }
             }
@@ -75,7 +79,7 @@ namespace SudokuSolver
                 {
                     if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
                     {
-                        textBox.Text = grid[row, col].ToString();
+                        textBox.Text = grid.GetCell(row, col).ToString();
                         textBox.ReadOnly = true;
                     }
                     else
@@ -84,91 +88,6 @@ namespace SudokuSolver
                     }
                 }
             }
-        }
-
-        private bool SolveSudoku(int row, int col)
-        {
-            // Find the next empty cell
-            if (!FindEmptyCell(ref row, ref col))
-            {
-                // If no empty cell found, puzzle is solved
-                return true;
-            }
-
-            // Try values from 1 to 9
-            for (int num = 1; num <= 9; num++)
-            {
-                if (IsSafe(row, col, num))
-                {
-                    // Assign the number if it's safe
-                    grid[row, col] = num;
-
-                    // Recursively solve for the next cell
-                    if (SolveSudoku(row, col))
-                    {
-                        return true;
-                    }
-
-                    // If the assignment doesn't lead to a solution, backtrack
-                    grid[row, col] = 0;
-                }
-            }
-
-            // No solution found
-            return false;
-        }
-
-        private bool FindEmptyCell(ref int row, ref int col)
-        {
-            for (row = 0; row < 9; row++)
-            {
-                for (col = 0; col < 9; col++)
-                {
-                    if (grid[row, col] == 0)
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            return false;
-        }
-
-        private bool IsSafe(int row, int col, int num)
-        {
-            // Check if the number already exists in the same row
-            for (int i = 0; i < 9; i++)
-            {
-                if (grid[row, i] == num)
-                {
-                    return false;
-                }
-            }
-
-            // Check if the number already exists in the same column
-            for (int i = 0; i < 9; i++)
-            {
-                if (grid[i, col] == num)
-                {
-                    return false;
-                }
-            }
-
-            // Check if the number already exists in the same 3x3 sub-grid
-            int subGridRow = row - row % 3;
-            int subGridCol = col - col % 3;
-            for (int i = 0; i < 3; i++)
-            {
-                for (int j = 0; j < 3; j++)
-                {
-                    if (grid[subGridRow + i, subGridCol + j] == num)
-                    {
-                        return false;
-                    }
-                }
-            }
-
-            return true;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
