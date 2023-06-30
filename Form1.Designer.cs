@@ -140,6 +140,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -176,18 +178,20 @@
             this.label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label19.Size = new System.Drawing.Size(211, 149);
             this.label19.TabIndex = 4;
-            this.label19.Text = "راهنمایی: ورودی های جدول سودوکو با مقادیر پیشفرض برای تشکیل سودوکوی قابل حل پر شد" +
-    "ه است. برای حل روی دکمه اول کلیک کنید. در هر مرحله برای ریست فرم از دکمه دوم است" +
-    "فاده کنید.";
+            this.label19.Text = " ورودی های جدول سودوکو با مقادیر پیشفرض برای تشکیل سودوکوی قابل حل پر شده است. بر" +
+    "ای حل روی دکمه اول کلیک کنید. در هر مرحله برای ریست فرم از دکمه دوم استفاده کنید" +
+    ".";
             // 
             // groupBox1
             // 
             this.groupBox1.AutoSize = true;
+            this.groupBox1.Controls.Add(this.label23);
+            this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.SolveButton);
             this.groupBox1.Controls.Add(this.BtnReset);
-            this.groupBox1.Location = new System.Drawing.Point(564, 12);
+            this.groupBox1.Location = new System.Drawing.Point(552, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(224, 134);
+            this.groupBox1.Size = new System.Drawing.Size(236, 134);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controls";
@@ -304,7 +308,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label17.Location = new System.Drawing.Point(9, 436);
+            this.label17.Location = new System.Drawing.Point(12, 429);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(20, 18);
             this.label17.TabIndex = 100;
@@ -314,7 +318,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.Location = new System.Drawing.Point(9, 272);
+            this.label14.Location = new System.Drawing.Point(12, 265);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(17, 18);
             this.label14.TabIndex = 84;
@@ -324,7 +328,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label11.Location = new System.Drawing.Point(10, 114);
+            this.label11.Location = new System.Drawing.Point(10, 116);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(18, 18);
             this.label11.TabIndex = 85;
@@ -334,7 +338,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(9, 488);
+            this.label16.Location = new System.Drawing.Point(16, 481);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(13, 18);
             this.label16.TabIndex = 86;
@@ -344,7 +348,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label15.Location = new System.Drawing.Point(9, 385);
+            this.label15.Location = new System.Drawing.Point(12, 378);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(19, 18);
             this.label15.TabIndex = 87;
@@ -354,7 +358,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(9, 324);
+            this.label13.Location = new System.Drawing.Point(12, 316);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(17, 18);
             this.label13.TabIndex = 88;
@@ -364,7 +368,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(9, 221);
+            this.label12.Location = new System.Drawing.Point(12, 214);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(19, 18);
             this.label12.TabIndex = 89;
@@ -374,7 +378,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(10, 166);
+            this.label10.Location = new System.Drawing.Point(10, 168);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(19, 18);
             this.label10.TabIndex = 83;
@@ -384,7 +388,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Roboto Medium", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(10, 63);
+            this.label9.Location = new System.Drawing.Point(10, 65);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(19, 18);
             this.label9.TabIndex = 90;
@@ -1133,21 +1137,22 @@
             // 
             this.groupBox3.AutoSize = true;
             this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Location = new System.Drawing.Point(564, 325);
+            this.groupBox3.Location = new System.Drawing.Point(552, 320);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(224, 216);
+            this.groupBox3.Size = new System.Drawing.Size(236, 221);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Hint";
             // 
             // groupBox4
             // 
+            this.groupBox4.AutoSize = true;
             this.groupBox4.Controls.Add(this.label21);
             this.groupBox4.Controls.Add(this.label20);
             this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Location = new System.Drawing.Point(564, 152);
+            this.groupBox4.Location = new System.Drawing.Point(552, 152);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(228, 150);
+            this.groupBox4.Size = new System.Drawing.Size(236, 162);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Generator";
@@ -1202,10 +1207,29 @@
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(34, 20);
             this.toolStripStatusLabel1.Text = "Idle";
             // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(113, 30);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(95, 20);
+            this.label22.TabIndex = 4;
+            this.label22.Text = "Solve Puzzle!";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(113, 65);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(83, 20);
+            this.label23.TabIndex = 4;
+            this.label23.Text = "Reset Form";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 581);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.groupBox4);
@@ -1218,6 +1242,7 @@
             this.Text = "Sudoku Solver";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1342,5 +1367,7 @@
         private Label label21;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
+        private Label label23;
+        private Label label22;
     }
 }
