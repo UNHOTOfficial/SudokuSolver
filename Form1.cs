@@ -24,7 +24,7 @@ namespace SudokuSolver
         {
             InitializeComponent();
 
- 
+
 
             sudokuPuzzles[0, 0, 0] = "5"; sudokuPuzzles[0, 0, 1] = "3"; sudokuPuzzles[0, 0, 2] = ""; sudokuPuzzles[0, 0, 3] = ""; sudokuPuzzles[0, 0, 4] = "7"; sudokuPuzzles[0, 0, 5] = ""; sudokuPuzzles[0, 0, 6] = ""; sudokuPuzzles[0, 0, 7] = ""; sudokuPuzzles[0, 0, 8] = "";
             sudokuPuzzles[0, 1, 0] = "6"; sudokuPuzzles[0, 1, 1] = ""; sudokuPuzzles[0, 1, 2] = ""; sudokuPuzzles[0, 1, 3] = "1"; sudokuPuzzles[0, 1, 4] = "9"; sudokuPuzzles[0, 1, 5] = "5"; sudokuPuzzles[0, 1, 6] = ""; sudokuPuzzles[0, 1, 7] = ""; sudokuPuzzles[0, 1, 8] = "";
