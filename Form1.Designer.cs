@@ -134,11 +134,10 @@
             this.textBox00 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label21 = new System.Windows.Forms.Label();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -1152,6 +1151,14 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Generator";
             // 
+            // label21
+            // 
+            this.label21.Location = new System.Drawing.Point(6, 69);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(216, 70);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "Select a difficulty from menu. The default difficulty is set to easy.";
+            // 
             // label20
             // 
             this.label20.AutoSize = true;
@@ -1177,30 +1184,16 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // label21
-            // 
-            this.label21.Location = new System.Drawing.Point(6, 69);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(216, 70);
-            this.label21.TabIndex = 2;
-            this.label21.Text = "Select a difficulty from menu. The default difficulty is set to easy.";
-            // 
             // statusStrip1
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
-            this.toolStripProgressBar1});
+            this.toolStripStatusLabel1});
             this.statusStrip1.Location = new System.Drawing.Point(0, 555);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(800, 26);
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "Status";
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(100, 18);
             // 
             // toolStripStatusLabel1
             // 
@@ -1347,6 +1340,5 @@
         private Label label21;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel toolStripStatusLabel1;
-        private ToolStripProgressBar toolStripProgressBar1;
     }
 }
