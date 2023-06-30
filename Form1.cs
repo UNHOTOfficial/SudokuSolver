@@ -13,7 +13,10 @@ namespace SudokuSolver
                 for (int col = 0; col < 9; col++)
                 {
                     TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
-                    textBox.Text = sudokuPuzzles[puzzleIndex, row, col].ToString();
+                    if (textBox != null)
+                    {
+                        textBox.Text = sudokuPuzzles[puzzleIndex, row, col].ToString();
+                    }
                     UpdateStatusLabel("Loading Puzzle...");
                 }
             }
@@ -197,6 +200,18 @@ namespace SudokuSolver
                     LoadSudokuPuzzle(4);
                     break;
 
+            }
+            for (int row = 0; row < 9; row++)
+            {
+                for (int col = 0; col < 9; col++)
+                {
+                    TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
+                    if (textBox != null)
+                    {
+                        textBox.ReadOnly = false;
+                    }
+
+                }
             }
             UpdateStatusLabel("Idle");
 
