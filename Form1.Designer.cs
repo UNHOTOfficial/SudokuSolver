@@ -129,6 +129,7 @@
             this.textBox88 = new System.Windows.Forms.TextBox();
             this.btnReset = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox00
@@ -1010,11 +1011,24 @@
             this.label18.TabIndex = 1;
             this.label18.Text = "9";
             // 
+            // label19
+            // 
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(564, 273);
+            this.label19.Name = "label19";
+            this.label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.label19.Size = new System.Drawing.Size(211, 206);
+            this.label19.TabIndex = 4;
+            this.label19.Text = "راهنمایی: ورودی های جدول سودوکو با مقادیر پیشفرض برای تشکیل سودوکوی قابل حل پر شد" +
+    "ه است. برای حل روی دکمه اول کلیک کنید. در هر مرحله برای ریست فرم از دکمه دوم است" +
+    "فاده کنید.";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 553);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.SolveButton);
             this.Controls.Add(this.label17);
@@ -1117,6 +1131,7 @@
             this.Controls.Add(this.textBox10);
             this.Controls.Add(this.textBox00);
             this.Name = "Form1";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Sudoku Solver";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -1227,5 +1242,6 @@
         private TextBox textBox88;
         private Button btnReset;
         private Label label18;
+        private Label label19;
     }
 }
