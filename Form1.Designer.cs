@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.SolveButton = new System.Windows.Forms.Button();
-            this.btnReset = new System.Windows.Forms.Button();
+            this.BtnReset = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -157,15 +157,15 @@
             this.SolveButton.UseVisualStyleBackColor = true;
             this.SolveButton.Click += new System.EventHandler(this.SolveButton_Click);
             // 
-            // btnReset
+            // BtnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(13, 61);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(94, 29);
-            this.btnReset.TabIndex = 3;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.BtnReset.Location = new System.Drawing.Point(13, 61);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(94, 29);
+            this.BtnReset.TabIndex = 3;
+            this.BtnReset.Text = "Reset";
+            this.BtnReset.UseVisualStyleBackColor = true;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // label19
             // 
@@ -184,7 +184,7 @@
             // 
             this.groupBox1.AutoSize = true;
             this.groupBox1.Controls.Add(this.SolveButton);
-            this.groupBox1.Controls.Add(this.btnReset);
+            this.groupBox1.Controls.Add(this.BtnReset);
             this.groupBox1.Location = new System.Drawing.Point(564, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(224, 134);
@@ -1232,7 +1232,7 @@
 
         #endregion
         private Button SolveButton;
-        private Button btnReset;
+        private Button BtnReset;
         private Label label19;
         private GroupBox groupBox1;
         private GroupBox groupBox2;

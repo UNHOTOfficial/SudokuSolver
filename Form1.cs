@@ -3,7 +3,7 @@ namespace SudokuSolver
 
     public partial class Form1 : Form
     {
-        private string[,,] sudokuPuzzles = new string[5, 9, 9];
+        private readonly string[,,] sudokuPuzzles = new string[5, 9, 9];
         private int sudokuLevel;
 
         private void LoadSudokuPuzzle(int puzzleIndex)
@@ -12,8 +12,7 @@ namespace SudokuSolver
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
-                    if (textBox != null)
+                    if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
                     {
                         textBox.Text = sudokuPuzzles[puzzleIndex, row, col].ToString();
                     }
@@ -22,7 +21,7 @@ namespace SudokuSolver
             }
         }
 
-        private Sudoku grid;
+        private readonly Sudoku grid;
 
         public Form1()
         {
@@ -109,7 +108,10 @@ namespace SudokuSolver
                     if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
                     {
                         textBox.Font = new Font("Roboto", 9, FontStyle.Bold);
-                        textBox.TextAlign = HorizontalAlignment.Center;
+                        if (textBox != null)
+                        {
+                            textBox.TextAlign = HorizontalAlignment.Center;
+                        }
                     }
                     else
                     {
@@ -165,7 +167,10 @@ namespace SudokuSolver
                     if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
                     {
                         textBox.Text = grid.GetCell(row, col).ToString();
-                        textBox.ReadOnly = true;
+                        if (textBox != null)
+                        {
+                            textBox.ReadOnly = true;
+                        }
                     }
                     else
                     {
@@ -182,7 +187,7 @@ namespace SudokuSolver
             toolStripStatusLabel1.Text = text;
         }
 
-        private void btnReset_Click(object sender, EventArgs e)
+        private void BtnReset_Click(object sender, EventArgs e)
         {
             UpdateStatusLabel("Resetting...");
             switch (sudokuLevel)
@@ -205,8 +210,7 @@ namespace SudokuSolver
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
-                    if (textBox != null)
+                    if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
                     {
                         textBox.ReadOnly = false;
                     }
