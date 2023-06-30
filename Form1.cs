@@ -14,6 +14,7 @@ namespace SudokuSolver
                 {
                     TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
                     textBox.Text = sudokuPuzzles[puzzleIndex, row, col].ToString();
+                    UpdateStatusLabel("Loading Puzzle...");
                 }
             }
         }
@@ -24,7 +25,7 @@ namespace SudokuSolver
         {
             InitializeComponent();
 
-
+            UpdateStatusLabel("Loading Form...");
 
             sudokuPuzzles[0, 0, 0] = "5"; sudokuPuzzles[0, 0, 1] = "3"; sudokuPuzzles[0, 0, 2] = ""; sudokuPuzzles[0, 0, 3] = ""; sudokuPuzzles[0, 0, 4] = "7"; sudokuPuzzles[0, 0, 5] = ""; sudokuPuzzles[0, 0, 6] = ""; sudokuPuzzles[0, 0, 7] = ""; sudokuPuzzles[0, 0, 8] = "";
             sudokuPuzzles[0, 1, 0] = "6"; sudokuPuzzles[0, 1, 1] = ""; sudokuPuzzles[0, 1, 2] = ""; sudokuPuzzles[0, 1, 3] = "1"; sudokuPuzzles[0, 1, 4] = "9"; sudokuPuzzles[0, 1, 5] = "5"; sudokuPuzzles[0, 1, 6] = ""; sudokuPuzzles[0, 1, 7] = ""; sudokuPuzzles[0, 1, 8] = "";
@@ -82,7 +83,9 @@ namespace SudokuSolver
 
 
 
+            UpdateStatusLabel("Loading Puzzles...");
             LoadSudokuPuzzle(0);
+            UpdateStatusLabel("Idle");
 
             comboBox1.SelectedIndex = 0;
 
@@ -92,7 +95,6 @@ namespace SudokuSolver
         private void Form1_Load(object sender, EventArgs e)
         {
             InitializeTextBoxes();
-
         }
 
         private void InitializeTextBoxes()
@@ -132,6 +134,7 @@ namespace SudokuSolver
 
         private void ReadGrid()
         {
+            UpdateStatusLabel("Solving...");
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
@@ -151,6 +154,7 @@ namespace SudokuSolver
 
         private void UpdateGrid()
         {
+            UpdateStatusLabel("Solving...");
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
@@ -166,10 +170,18 @@ namespace SudokuSolver
                     }
                 }
             }
+            UpdateStatusLabel("Idle");
+
+        }
+
+        private void UpdateStatusLabel(string text)
+        {
+            toolStripStatusLabel1.Text = text;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            UpdateStatusLabel("Resetting...");
             switch (sudokuLevel)
             {
                 case 1:
@@ -186,10 +198,13 @@ namespace SudokuSolver
                     break;
 
             }
+            UpdateStatusLabel("Idle");
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            UpdateStatusLabel("Loading Puzzle...");
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
@@ -214,6 +229,8 @@ namespace SudokuSolver
                     break;
 
             }
+            UpdateStatusLabel("Idle");
+
         }
     }
 }
