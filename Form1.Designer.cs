@@ -482,7 +482,6 @@
             this.textBox88.Name = "textBox88";
             this.textBox88.Size = new System.Drawing.Size(45, 45);
             this.textBox88.TabIndex = 53;
-            this.textBox88.Text = "9";
             // 
             // textBox78
             // 
@@ -491,7 +490,6 @@
             this.textBox78.Name = "textBox78";
             this.textBox78.Size = new System.Drawing.Size(45, 45);
             this.textBox78.TabIndex = 54;
-            this.textBox78.Text = "5";
             // 
             // textBox68
             // 
@@ -508,7 +506,6 @@
             this.textBox58.Name = "textBox58";
             this.textBox58.Size = new System.Drawing.Size(45, 45);
             this.textBox58.TabIndex = 56;
-            this.textBox58.Text = "6";
             // 
             // textBox48
             // 
@@ -517,7 +514,6 @@
             this.textBox48.Name = "textBox48";
             this.textBox48.Size = new System.Drawing.Size(45, 45);
             this.textBox48.TabIndex = 57;
-            this.textBox48.Text = "1";
             // 
             // textBox38
             // 
@@ -526,7 +522,6 @@
             this.textBox38.Name = "textBox38";
             this.textBox38.Size = new System.Drawing.Size(45, 45);
             this.textBox38.TabIndex = 67;
-            this.textBox38.Text = "3";
             // 
             // textBox28
             // 
@@ -543,7 +538,6 @@
             this.textBox87.Name = "textBox87";
             this.textBox87.Size = new System.Drawing.Size(45, 45);
             this.textBox87.TabIndex = 60;
-            this.textBox87.Text = "7";
             // 
             // textBox77
             // 
@@ -560,7 +554,6 @@
             this.textBox67.Name = "textBox67";
             this.textBox67.Size = new System.Drawing.Size(45, 45);
             this.textBox67.TabIndex = 62;
-            this.textBox67.Text = "8";
             // 
             // textBox57
             // 
@@ -593,7 +586,6 @@
             this.textBox27.Name = "textBox27";
             this.textBox27.Size = new System.Drawing.Size(45, 45);
             this.textBox27.TabIndex = 66;
-            this.textBox27.Text = "6";
             // 
             // textBox86
             // 
@@ -618,7 +610,6 @@
             this.textBox66.Name = "textBox66";
             this.textBox66.Size = new System.Drawing.Size(45, 45);
             this.textBox66.TabIndex = 81;
-            this.textBox66.Text = "2";
             // 
             // textBox56
             // 
@@ -667,7 +658,6 @@
             this.textBox75.Name = "textBox75";
             this.textBox75.Size = new System.Drawing.Size(45, 45);
             this.textBox75.TabIndex = 82;
-            this.textBox75.Text = "9";
             // 
             // textBox65
             // 
@@ -692,7 +682,6 @@
             this.textBox45.Name = "textBox45";
             this.textBox45.Size = new System.Drawing.Size(45, 45);
             this.textBox45.TabIndex = 72;
-            this.textBox45.Text = "3";
             // 
             // textBox35
             // 
@@ -717,7 +706,6 @@
             this.textBox84.Name = "textBox84";
             this.textBox84.Size = new System.Drawing.Size(45, 45);
             this.textBox84.TabIndex = 70;
-            this.textBox84.Text = "8";
             // 
             // textBox74
             // 
@@ -726,7 +714,6 @@
             this.textBox74.Name = "textBox74";
             this.textBox74.Size = new System.Drawing.Size(45, 45);
             this.textBox74.TabIndex = 52;
-            this.textBox74.Text = "1";
             // 
             // textBox64
             // 
@@ -743,7 +730,6 @@
             this.textBox54.Name = "textBox54";
             this.textBox54.Size = new System.Drawing.Size(45, 45);
             this.textBox54.TabIndex = 2;
-            this.textBox54.Text = "2";
             // 
             // textBox44
             // 
@@ -760,7 +746,6 @@
             this.textBox34.Name = "textBox34";
             this.textBox34.Size = new System.Drawing.Size(45, 45);
             this.textBox34.TabIndex = 23;
-            this.textBox34.Text = "6";
             // 
             // textBox24
             // 
@@ -785,7 +770,6 @@
             this.textBox73.Name = "textBox73";
             this.textBox73.Size = new System.Drawing.Size(45, 45);
             this.textBox73.TabIndex = 20;
-            this.textBox73.Text = "4";
             // 
             // textBox63
             // 
@@ -810,7 +794,6 @@
             this.textBox43.Name = "textBox43";
             this.textBox43.Size = new System.Drawing.Size(45, 45);
             this.textBox43.TabIndex = 17;
-            this.textBox43.Text = "8";
             // 
             // textBox33
             // 
@@ -883,7 +866,6 @@
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(45, 45);
             this.textBox22.TabIndex = 8;
-            this.textBox22.Text = "8";
             // 
             // textBox81
             // 
@@ -908,7 +890,6 @@
             this.textBox61.Name = "textBox61";
             this.textBox61.Size = new System.Drawing.Size(45, 45);
             this.textBox61.TabIndex = 5;
-            this.textBox61.Text = "6";
             // 
             // textBox51
             // 
@@ -941,7 +922,6 @@
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(45, 45);
             this.textBox21.TabIndex = 26;
-            this.textBox21.Text = "9";
             // 
             // textBox80
             // 
@@ -974,7 +954,6 @@
             this.textBox50.Name = "textBox50";
             this.textBox50.Size = new System.Drawing.Size(45, 45);
             this.textBox50.TabIndex = 47;
-            this.textBox50.Text = "7";
             // 
             // textBox40
             // 
@@ -983,7 +962,6 @@
             this.textBox40.Name = "textBox40";
             this.textBox40.Size = new System.Drawing.Size(45, 45);
             this.textBox40.TabIndex = 46;
-            this.textBox40.Text = "4";
             // 
             // textBox30
             // 
@@ -992,7 +970,6 @@
             this.textBox30.Name = "textBox30";
             this.textBox30.Size = new System.Drawing.Size(45, 45);
             this.textBox30.TabIndex = 45;
-            this.textBox30.Text = "8";
             // 
             // textBox20
             // 
@@ -1017,7 +994,6 @@
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(45, 45);
             this.textBox15.TabIndex = 42;
-            this.textBox15.Text = "5";
             // 
             // textBox12
             // 
@@ -1074,7 +1050,6 @@
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(45, 45);
             this.textBox14.TabIndex = 35;
-            this.textBox14.Text = "9";
             // 
             // textBox04
             // 
@@ -1083,7 +1058,6 @@
             this.textBox04.Name = "textBox04";
             this.textBox04.Size = new System.Drawing.Size(45, 45);
             this.textBox04.TabIndex = 34;
-            this.textBox04.Text = "7";
             // 
             // textBox11
             // 
@@ -1108,7 +1082,6 @@
             this.textBox01.Name = "textBox01";
             this.textBox01.Size = new System.Drawing.Size(45, 45);
             this.textBox01.TabIndex = 31;
-            this.textBox01.Text = "3";
             // 
             // textBox13
             // 
@@ -1117,7 +1090,6 @@
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(45, 45);
             this.textBox13.TabIndex = 30;
-            this.textBox13.Text = "1";
             // 
             // textBox06
             // 
@@ -1142,7 +1114,6 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(45, 45);
             this.textBox10.TabIndex = 50;
-            this.textBox10.Text = "6";
             // 
             // textBox00
             // 
@@ -1152,7 +1123,6 @@
             this.textBox00.Name = "textBox00";
             this.textBox00.Size = new System.Drawing.Size(45, 45);
             this.textBox00.TabIndex = 51;
-            this.textBox00.Text = "5";
             // 
             // groupBox3
             // 
@@ -1187,6 +1157,7 @@
             // 
             // comboBox1
             // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Easy",
@@ -1198,7 +1169,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(134, 28);
             this.comboBox1.TabIndex = 0;
-            this.comboBox1.Text = "Easy";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // Form1
