@@ -141,7 +141,6 @@
             this.label20 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -173,15 +172,14 @@
             // label19
             // 
             this.label19.AutoEllipsis = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label19.Location = new System.Drawing.Point(6, 33);
+            this.label19.Margin = new System.Windows.Forms.Padding(0);
             this.label19.Name = "label19";
             this.label19.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label19.Size = new System.Drawing.Size(211, 149);
+            this.label19.Size = new System.Drawing.Size(211, 158);
             this.label19.TabIndex = 4;
-            this.label19.Text = " ورودی های جدول سودوکو با مقادیر پیشفرض برای تشکیل سودوکوی قابل حل پر شده است. بر" +
-    "ای حل روی دکمه اول کلیک کنید. در هر مرحله برای ریست فرم از دکمه دوم استفاده کنید" +
-    ".";
+            this.label19.Text = resources.GetString("label19.Text");
             // 
             // groupBox1
             // 
@@ -1180,9 +1178,10 @@
             // 
             this.label21.Location = new System.Drawing.Point(6, 69);
             this.label21.Name = "label21";
+            this.label21.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label21.Size = new System.Drawing.Size(216, 70);
             this.label21.TabIndex = 2;
-            this.label21.Text = "Select a difficulty from menu. The default difficulty is set to easy.";
+            this.label21.Text = "از منوی بالا سختی سودوکو را انتخاب کنید. مقدار پیشفرض راحت است";
             // 
             // label20
             // 
@@ -1213,7 +1212,6 @@
             // 
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel1,
             this.toolStripStatusLabel2});
             this.statusStrip1.Location = new System.Drawing.Point(0, 555);
             this.statusStrip1.Name = "statusStrip1";
@@ -1221,17 +1219,10 @@
             this.statusStrip1.TabIndex = 9;
             this.statusStrip1.Text = "Status";
             // 
-            // toolStripStatusLabel1
-            // 
-            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(34, 20);
-            this.toolStripStatusLabel1.Text = "Idle";
-            // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(712, 20);
-            this.toolStripStatusLabel2.Spring = true;
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(252, 20);
             this.toolStripStatusLabel2.Text = "Sudoku Solver - Mehdi Salmanzadeh";
             this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
             // 
@@ -1376,7 +1367,6 @@
         private ComboBox comboBox1;
         private Label label21;
         private StatusStrip statusStrip1;
-        private ToolStripStatusLabel toolStripStatusLabel1;
         private Label label23;
         private Label label22;
         private ToolStripStatusLabel toolStripStatusLabel2;

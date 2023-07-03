@@ -25,7 +25,6 @@ namespace SudokuSolver
                     }
 
                     // Update the status label to indicate that the puzzle is being loaded
-                    UpdateStatusLabel("Loading Puzzle...");
                 }
             }
         }
@@ -37,7 +36,6 @@ namespace SudokuSolver
         {
             InitializeComponent();
 
-            UpdateStatusLabel("Loading Form...");
 
             sudokuPuzzles[0, 0, 0] = "5"; sudokuPuzzles[0, 0, 1] = "3"; sudokuPuzzles[0, 0, 2] = ""; sudokuPuzzles[0, 0, 3] = ""; sudokuPuzzles[0, 0, 4] = "7"; sudokuPuzzles[0, 0, 5] = ""; sudokuPuzzles[0, 0, 6] = ""; sudokuPuzzles[0, 0, 7] = ""; sudokuPuzzles[0, 0, 8] = "";
             sudokuPuzzles[0, 1, 0] = "6"; sudokuPuzzles[0, 1, 1] = ""; sudokuPuzzles[0, 1, 2] = ""; sudokuPuzzles[0, 1, 3] = "1"; sudokuPuzzles[0, 1, 4] = "9"; sudokuPuzzles[0, 1, 5] = "5"; sudokuPuzzles[0, 1, 6] = ""; sudokuPuzzles[0, 1, 7] = ""; sudokuPuzzles[0, 1, 8] = "";
@@ -94,10 +92,7 @@ namespace SudokuSolver
             sudokuPuzzles[4, 8, 0] = ""; sudokuPuzzles[4, 8, 1] = ""; sudokuPuzzles[4, 8, 2] = ""; sudokuPuzzles[4, 8, 3] = ""; sudokuPuzzles[4, 8, 4] = "8"; sudokuPuzzles[4, 8, 5] = ""; sudokuPuzzles[4, 8, 6] = ""; sudokuPuzzles[4, 8, 7] = ""; sudokuPuzzles[4, 8, 8] = "";
 
 
-
-            UpdateStatusLabel("Loading Puzzles...");
             LoadSudokuPuzzle(0);
-            UpdateStatusLabel("Idle");
 
             comboBox1.SelectedIndex = 0;
 
@@ -200,8 +195,6 @@ namespace SudokuSolver
 
         private void ReadGrid()
         {
-            UpdateStatusLabel("Solving...");
-
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
@@ -226,8 +219,6 @@ namespace SudokuSolver
 
         private void UpdateGrid()
         {
-            UpdateStatusLabel("Solving...");
-
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
@@ -246,22 +237,11 @@ namespace SudokuSolver
                     }
                 }
             }
-
-            UpdateStatusLabel("Idle");
-        }
-
-
-        private void UpdateStatusLabel(string text)
-        {
-            // Update the status label text
-            toolStripStatusLabel1.Text = text;
         }
 
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            UpdateStatusLabel("Resetting...");
-
             // Load the appropriate puzzle based on the Sudoku level
             int puzzleIndex = sudokuLevel;
             LoadSudokuPuzzle(puzzleIndex);
@@ -277,23 +257,17 @@ namespace SudokuSolver
                     }
                 }
             }
-
-            UpdateStatusLabel("Idle");
         }
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            UpdateStatusLabel("Loading Puzzle...");
-
             // Determine the selected puzzle level and load the corresponding puzzle
             int selectedLevel = comboBox1.SelectedIndex;
             LoadSudokuPuzzle(selectedLevel);
 
             // Update the sudokuLevel variable to reflect the selected level
             sudokuLevel = selectedLevel;
-
-            UpdateStatusLabel("Idle");
         }
 
 
@@ -310,6 +284,5 @@ namespace SudokuSolver
             // Start a new process to open the URL in a web browser
             System.Diagnostics.Process.Start(url);
         }
-
     }
 }
