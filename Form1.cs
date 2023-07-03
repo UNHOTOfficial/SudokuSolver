@@ -174,21 +174,27 @@ namespace SudokuSolver
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    TextBox? textBox = Controls.Find("textBox" + row + col, true).FirstOrDefault() as TextBox;
-
-                    if (textBox != null)
+                    TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
+                    if (textBox?.Text != null && textBox.Text != "")
                     {
-                        if (!int.TryParse(textBox.Text, out int value) || value > 9 || string.IsNullOrEmpty(textBox.Text))
+                        if (!int.TryParse(textBox.Text, out int value) || value > 9)
                         {
                             return false; // Invalid input found, return false immediately
                         }
+                        else if (string.IsNullOrEmpty(textBox.Text))
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        // Empty or null input found, return false immediately
                     }
                 }
             }
 
             return true; // No invalid inputs found, return true
         }
-
 
 
 
