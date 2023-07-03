@@ -43,14 +43,14 @@ namespace SudokuSolver
 
                     if (SolveSudoku(row, col))
                     {
-                        return true; // Recursively solve the puzzle
+                        return true; // solve the puzzle
                     }
 
-                    grid[row, col] = 0; // Backtrack and reset the cell if the solution is not valid
+                    grid[row, col] = 0; // reset the cell if the solution is not valid
                 }
             }
 
-            return false; // If no valid number can be placed, backtrack and try a different number
+            return false; // If no valid number can be placed, try a different number
         }
 
         private bool FindEmptyCell(ref int row, ref int col)

@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace SudokuSolver
 {
 
@@ -8,27 +10,20 @@ namespace SudokuSolver
 
         private void LoadSudokuPuzzle(int puzzleIndex)
         {
-            // Iterate over each row and column of the puzzle grid
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    // Find the TextBox control corresponding to the current row and column
                     string textBoxName = "textBox" + row + col;
-                    TextBox textBox = Controls.Find(textBoxName, true).FirstOrDefault() as TextBox;
 
-                    if (textBox != null)
+                    if (Controls.Find(textBoxName, true).FirstOrDefault() is TextBox textBox)
                     {
-                        // Set the value of the TextBox to the corresponding puzzle value
                         textBox.Text = sudokuPuzzles[puzzleIndex, row, col];
-                        textBox.ReadOnly = false; // Allow editing the TextBox
+                        textBox.ReadOnly = false;
                     }
-
-                    // Update the status label to indicate that the puzzle is being loaded
                 }
             }
         }
-
 
         private readonly Sudoku grid;
 
@@ -36,7 +31,7 @@ namespace SudokuSolver
         {
             InitializeComponent();
 
-
+            //Easy
             sudokuPuzzles[0, 0, 0] = "5"; sudokuPuzzles[0, 0, 1] = "3"; sudokuPuzzles[0, 0, 2] = ""; sudokuPuzzles[0, 0, 3] = ""; sudokuPuzzles[0, 0, 4] = "7"; sudokuPuzzles[0, 0, 5] = ""; sudokuPuzzles[0, 0, 6] = ""; sudokuPuzzles[0, 0, 7] = ""; sudokuPuzzles[0, 0, 8] = "";
             sudokuPuzzles[0, 1, 0] = "6"; sudokuPuzzles[0, 1, 1] = ""; sudokuPuzzles[0, 1, 2] = ""; sudokuPuzzles[0, 1, 3] = "1"; sudokuPuzzles[0, 1, 4] = "9"; sudokuPuzzles[0, 1, 5] = "5"; sudokuPuzzles[0, 1, 6] = ""; sudokuPuzzles[0, 1, 7] = ""; sudokuPuzzles[0, 1, 8] = "";
             sudokuPuzzles[0, 2, 0] = ""; sudokuPuzzles[0, 2, 1] = "9"; sudokuPuzzles[0, 2, 2] = "8"; sudokuPuzzles[0, 2, 3] = ""; sudokuPuzzles[0, 2, 4] = ""; sudokuPuzzles[0, 2, 5] = ""; sudokuPuzzles[0, 2, 6] = ""; sudokuPuzzles[0, 2, 7] = "6"; sudokuPuzzles[0, 2, 8] = "";
@@ -47,7 +42,7 @@ namespace SudokuSolver
             sudokuPuzzles[0, 7, 0] = ""; sudokuPuzzles[0, 7, 1] = ""; sudokuPuzzles[0, 7, 2] = ""; sudokuPuzzles[0, 7, 3] = "4"; sudokuPuzzles[0, 7, 4] = "1"; sudokuPuzzles[0, 7, 5] = "9"; sudokuPuzzles[0, 7, 6] = ""; sudokuPuzzles[0, 7, 7] = ""; sudokuPuzzles[0, 7, 8] = "5";
             sudokuPuzzles[0, 8, 0] = ""; sudokuPuzzles[0, 8, 1] = ""; sudokuPuzzles[0, 8, 2] = ""; sudokuPuzzles[0, 8, 3] = ""; sudokuPuzzles[0, 8, 4] = "8"; sudokuPuzzles[0, 8, 5] = ""; sudokuPuzzles[0, 8, 6] = ""; sudokuPuzzles[0, 8, 7] = "7"; sudokuPuzzles[0, 8, 8] = "9";
 
-
+            //Medium
             sudokuPuzzles[1, 0, 0] = ""; sudokuPuzzles[1, 0, 1] = "4"; sudokuPuzzles[1, 0, 2] = ""; sudokuPuzzles[1, 0, 3] = ""; sudokuPuzzles[1, 0, 4] = "9"; sudokuPuzzles[1, 0, 5] = ""; sudokuPuzzles[1, 0, 6] = ""; sudokuPuzzles[1, 0, 7] = "6"; sudokuPuzzles[1, 0, 8] = "";
             sudokuPuzzles[1, 1, 0] = "7"; sudokuPuzzles[1, 1, 1] = ""; sudokuPuzzles[1, 1, 2] = ""; sudokuPuzzles[1, 1, 3] = ""; sudokuPuzzles[1, 1, 4] = ""; sudokuPuzzles[1, 1, 5] = "1"; sudokuPuzzles[1, 1, 6] = "2"; sudokuPuzzles[1, 1, 7] = ""; sudokuPuzzles[1, 1, 8] = "5";
             sudokuPuzzles[1, 2, 0] = "6"; sudokuPuzzles[1, 2, 1] = ""; sudokuPuzzles[1, 2, 2] = ""; sudokuPuzzles[1, 2, 3] = ""; sudokuPuzzles[1, 2, 4] = ""; sudokuPuzzles[1, 2, 5] = "4"; sudokuPuzzles[1, 2, 6] = ""; sudokuPuzzles[1, 2, 7] = "3"; sudokuPuzzles[1, 2, 8] = "";
@@ -58,7 +53,7 @@ namespace SudokuSolver
             sudokuPuzzles[1, 7, 0] = "9"; sudokuPuzzles[1, 7, 1] = ""; sudokuPuzzles[1, 7, 2] = "5"; sudokuPuzzles[1, 7, 3] = "6"; sudokuPuzzles[1, 7, 4] = ""; sudokuPuzzles[1, 7, 5] = ""; sudokuPuzzles[1, 7, 6] = ""; sudokuPuzzles[1, 7, 7] = ""; sudokuPuzzles[1, 7, 8] = "";
             sudokuPuzzles[1, 8, 0] = ""; sudokuPuzzles[1, 8, 1] = "7"; sudokuPuzzles[1, 8, 2] = ""; sudokuPuzzles[1, 8, 3] = ""; sudokuPuzzles[1, 8, 4] = "3"; sudokuPuzzles[1, 8, 5] = ""; sudokuPuzzles[1, 8, 6] = ""; sudokuPuzzles[1, 8, 7] = "5"; sudokuPuzzles[1, 8, 8] = "";
 
-
+            //Hard
             sudokuPuzzles[2, 0, 0] = ""; sudokuPuzzles[2, 0, 1] = ""; sudokuPuzzles[2, 0, 2] = ""; sudokuPuzzles[2, 0, 3] = ""; sudokuPuzzles[2, 0, 4] = ""; sudokuPuzzles[2, 0, 5] = "9"; sudokuPuzzles[2, 0, 6] = ""; sudokuPuzzles[2, 0, 7] = ""; sudokuPuzzles[2, 0, 8] = "";
             sudokuPuzzles[2, 1, 0] = "1"; sudokuPuzzles[2, 1, 1] = ""; sudokuPuzzles[2, 1, 2] = ""; sudokuPuzzles[2, 1, 3] = "6"; sudokuPuzzles[2, 1, 4] = ""; sudokuPuzzles[2, 1, 5] = ""; sudokuPuzzles[2, 1, 6] = "4"; sudokuPuzzles[2, 1, 7] = ""; sudokuPuzzles[2, 1, 8] = "";
             sudokuPuzzles[2, 2, 0] = ""; sudokuPuzzles[2, 2, 1] = ""; sudokuPuzzles[2, 2, 2] = ""; sudokuPuzzles[2, 2, 3] = "5"; sudokuPuzzles[2, 2, 4] = ""; sudokuPuzzles[2, 2, 5] = ""; sudokuPuzzles[2, 2, 6] = "2"; sudokuPuzzles[2, 2, 7] = ""; sudokuPuzzles[2, 2, 8] = "";
@@ -69,7 +64,7 @@ namespace SudokuSolver
             sudokuPuzzles[2, 7, 0] = ""; sudokuPuzzles[2, 7, 1] = ""; sudokuPuzzles[2, 7, 2] = "2"; sudokuPuzzles[2, 7, 3] = ""; sudokuPuzzles[2, 7, 4] = ""; sudokuPuzzles[2, 7, 5] = "4"; sudokuPuzzles[2, 7, 6] = ""; sudokuPuzzles[2, 7, 7] = ""; sudokuPuzzles[2, 7, 8] = "7";
             sudokuPuzzles[2, 8, 0] = ""; sudokuPuzzles[2, 8, 1] = ""; sudokuPuzzles[2, 8, 2] = ""; sudokuPuzzles[2, 8, 3] = "9"; sudokuPuzzles[2, 8, 4] = ""; sudokuPuzzles[2, 8, 5] = ""; sudokuPuzzles[2, 8, 6] = ""; sudokuPuzzles[2, 8, 7] = ""; sudokuPuzzles[2, 8, 8] = "";
 
-
+            //Expert
             sudokuPuzzles[3, 0, 0] = ""; sudokuPuzzles[3, 0, 1] = ""; sudokuPuzzles[3, 0, 2] = ""; sudokuPuzzles[3, 0, 3] = "1"; sudokuPuzzles[3, 0, 4] = ""; sudokuPuzzles[3, 0, 5] = ""; sudokuPuzzles[3, 0, 6] = ""; sudokuPuzzles[3, 0, 7] = ""; sudokuPuzzles[3, 0, 8] = "";
             sudokuPuzzles[3, 1, 0] = ""; sudokuPuzzles[3, 1, 1] = "1"; sudokuPuzzles[3, 1, 2] = ""; sudokuPuzzles[3, 1, 3] = ""; sudokuPuzzles[3, 1, 4] = "6"; sudokuPuzzles[3, 1, 5] = ""; sudokuPuzzles[3, 1, 6] = ""; sudokuPuzzles[3, 1, 7] = ""; sudokuPuzzles[3, 1, 8] = "4";
             sudokuPuzzles[3, 2, 0] = ""; sudokuPuzzles[3, 2, 1] = ""; sudokuPuzzles[3, 2, 2] = ""; sudokuPuzzles[3, 2, 3] = ""; sudokuPuzzles[3, 2, 4] = ""; sudokuPuzzles[3, 2, 5] = "7"; sudokuPuzzles[3, 2, 6] = ""; sudokuPuzzles[3, 2, 7] = "6"; sudokuPuzzles[3, 2, 8] = "";
@@ -80,7 +75,7 @@ namespace SudokuSolver
             sudokuPuzzles[3, 7, 0] = "4"; sudokuPuzzles[3, 7, 1] = ""; sudokuPuzzles[3, 7, 2] = ""; sudokuPuzzles[3, 7, 3] = ""; sudokuPuzzles[3, 7, 4] = "2"; sudokuPuzzles[3, 7, 5] = ""; sudokuPuzzles[3, 7, 6] = ""; sudokuPuzzles[3, 7, 7] = "9"; sudokuPuzzles[3, 7, 8] = "";
             sudokuPuzzles[3, 8, 0] = ""; sudokuPuzzles[3, 8, 1] = ""; sudokuPuzzles[3, 8, 2] = ""; sudokuPuzzles[3, 8, 3] = ""; sudokuPuzzles[3, 8, 4] = ""; sudokuPuzzles[3, 8, 5] = "3"; sudokuPuzzles[3, 8, 6] = ""; sudokuPuzzles[3, 8, 7] = ""; sudokuPuzzles[3, 8, 8] = "";
 
-
+            //Evil
             sudokuPuzzles[4, 0, 0] = "8"; sudokuPuzzles[4, 0, 1] = ""; sudokuPuzzles[4, 0, 2] = ""; sudokuPuzzles[4, 0, 3] = ""; sudokuPuzzles[4, 0, 4] = ""; sudokuPuzzles[4, 0, 5] = ""; sudokuPuzzles[4, 0, 6] = ""; sudokuPuzzles[4, 0, 7] = ""; sudokuPuzzles[4, 0, 8] = "";
             sudokuPuzzles[4, 1, 0] = ""; sudokuPuzzles[4, 1, 1] = ""; sudokuPuzzles[4, 1, 2] = "3"; sudokuPuzzles[4, 1, 3] = ""; sudokuPuzzles[4, 1, 4] = ""; sudokuPuzzles[4, 1, 5] = ""; sudokuPuzzles[4, 1, 6] = ""; sudokuPuzzles[4, 1, 7] = ""; sudokuPuzzles[4, 1, 8] = "";
             sudokuPuzzles[4, 2, 0] = ""; sudokuPuzzles[4, 2, 1] = "7"; sudokuPuzzles[4, 2, 2] = ""; sudokuPuzzles[4, 2, 3] = ""; sudokuPuzzles[4, 2, 4] = ""; sudokuPuzzles[4, 2, 5] = ""; sudokuPuzzles[4, 2, 6] = "4"; sudokuPuzzles[4, 2, 7] = ""; sudokuPuzzles[4, 2, 8] = "";
@@ -106,12 +101,10 @@ namespace SudokuSolver
 
         private void InitializeTextBoxes()
         {
-            // Iterate over each row and column of the puzzle grid
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    // Find the TextBox control corresponding to the current row and column
                     string textBoxName = "textBox" + row + col;
 
                     if (Controls.Find(textBoxName, true).FirstOrDefault() is TextBox textBox)
@@ -121,11 +114,6 @@ namespace SudokuSolver
 
                         // Set the text alignment to center for the TextBox
                         textBox.TextAlign = HorizontalAlignment.Center;
-                    }
-                    else
-                    {
-                        // Display a message box indicating that an input can't be empty
-                        MessageBox.Show("Inputs Can't Be Empty.");
                     }
                 }
             }
@@ -174,21 +162,17 @@ namespace SudokuSolver
                     {
                         if (!int.TryParse(textBox.Text, out int value) || value > 9)
                         {
-                            return false; // Invalid input found, return false immediately
+                            return false;
                         }
                         else if (string.IsNullOrEmpty(textBox.Text))
                         {
                             return false;
                         }
                     }
-                    else
-                    {
-                        // Empty or null input found, return false immediately
-                    }
                 }
             }
 
-            return true; // No invalid inputs found, return true
+            return true; // No invalid inputs found
         }
 
 
@@ -283,6 +267,22 @@ namespace SudokuSolver
 
             // Start a new process to open the URL in a web browser
             System.Diagnostics.Process.Start(url);
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string url = "https://github.com/UNHOTOfficial/SudokuSolver";
+
+            System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            };
+            using (System.Diagnostics.Process process = new System.Diagnostics.Process())
+            {
+                process.StartInfo = psi;
+                process.Start();
+            }
         }
     }
 }

@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.SolveButton = new System.Windows.Forms.Button();
+            this.BtnSolve = new System.Windows.Forms.Button();
             this.BtnReset = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBoxControls = new System.Windows.Forms.GroupBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxSudoku = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -135,29 +135,27 @@
             this.textBox03 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox00 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBoxHint = new System.Windows.Forms.GroupBox();
+            this.groupBoxGenerator = new System.Windows.Forms.GroupBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.groupBoxControls.SuspendLayout();
+            this.groupBoxSudoku.SuspendLayout();
+            this.groupBoxHint.SuspendLayout();
+            this.groupBoxGenerator.SuspendLayout();
             this.SuspendLayout();
             // 
-            // SolveButton
+            // BtnSolve
             // 
-            this.SolveButton.Location = new System.Drawing.Point(13, 26);
-            this.SolveButton.Name = "SolveButton";
-            this.SolveButton.Size = new System.Drawing.Size(94, 29);
-            this.SolveButton.TabIndex = 2;
-            this.SolveButton.Text = "Solve!";
-            this.SolveButton.UseVisualStyleBackColor = true;
-            this.SolveButton.Click += new System.EventHandler(this.SolveButton_Click);
+            this.BtnSolve.Location = new System.Drawing.Point(13, 26);
+            this.BtnSolve.Name = "BtnSolve";
+            this.BtnSolve.Size = new System.Drawing.Size(94, 29);
+            this.BtnSolve.TabIndex = 2;
+            this.BtnSolve.Text = "Solve!";
+            this.BtnSolve.UseVisualStyleBackColor = true;
+            this.BtnSolve.Click += new System.EventHandler(this.SolveButton_Click);
             // 
             // BtnReset
             // 
@@ -181,19 +179,19 @@
             this.label19.TabIndex = 4;
             this.label19.Text = resources.GetString("label19.Text");
             // 
-            // groupBox1
+            // groupBoxControls
             // 
-            this.groupBox1.AutoSize = true;
-            this.groupBox1.Controls.Add(this.label23);
-            this.groupBox1.Controls.Add(this.label22);
-            this.groupBox1.Controls.Add(this.SolveButton);
-            this.groupBox1.Controls.Add(this.BtnReset);
-            this.groupBox1.Location = new System.Drawing.Point(552, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(236, 134);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Controls";
+            this.groupBoxControls.AutoSize = true;
+            this.groupBoxControls.Controls.Add(this.label23);
+            this.groupBoxControls.Controls.Add(this.label22);
+            this.groupBoxControls.Controls.Add(this.BtnSolve);
+            this.groupBoxControls.Controls.Add(this.BtnReset);
+            this.groupBoxControls.Location = new System.Drawing.Point(552, 12);
+            this.groupBoxControls.Name = "groupBoxControls";
+            this.groupBoxControls.Size = new System.Drawing.Size(236, 134);
+            this.groupBoxControls.TabIndex = 5;
+            this.groupBoxControls.TabStop = false;
+            this.groupBoxControls.Text = "Controls";
             // 
             // label23
             // 
@@ -213,113 +211,113 @@
             this.label22.TabIndex = 4;
             this.label22.Text = "Solve Puzzle!";
             // 
-            // groupBox2
+            // groupBoxSudoku
             // 
-            this.groupBox2.Controls.Add(this.label17);
-            this.groupBox2.Controls.Add(this.label14);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label16);
-            this.groupBox2.Controls.Add(this.label15);
-            this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Controls.Add(this.label12);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox88);
-            this.groupBox2.Controls.Add(this.textBox78);
-            this.groupBox2.Controls.Add(this.textBox68);
-            this.groupBox2.Controls.Add(this.textBox58);
-            this.groupBox2.Controls.Add(this.textBox48);
-            this.groupBox2.Controls.Add(this.textBox38);
-            this.groupBox2.Controls.Add(this.textBox28);
-            this.groupBox2.Controls.Add(this.textBox87);
-            this.groupBox2.Controls.Add(this.textBox77);
-            this.groupBox2.Controls.Add(this.textBox67);
-            this.groupBox2.Controls.Add(this.textBox57);
-            this.groupBox2.Controls.Add(this.textBox47);
-            this.groupBox2.Controls.Add(this.textBox37);
-            this.groupBox2.Controls.Add(this.textBox27);
-            this.groupBox2.Controls.Add(this.textBox86);
-            this.groupBox2.Controls.Add(this.textBox76);
-            this.groupBox2.Controls.Add(this.textBox66);
-            this.groupBox2.Controls.Add(this.textBox56);
-            this.groupBox2.Controls.Add(this.textBox46);
-            this.groupBox2.Controls.Add(this.textBox36);
-            this.groupBox2.Controls.Add(this.textBox26);
-            this.groupBox2.Controls.Add(this.textBox85);
-            this.groupBox2.Controls.Add(this.textBox75);
-            this.groupBox2.Controls.Add(this.textBox65);
-            this.groupBox2.Controls.Add(this.textBox55);
-            this.groupBox2.Controls.Add(this.textBox45);
-            this.groupBox2.Controls.Add(this.textBox35);
-            this.groupBox2.Controls.Add(this.textBox25);
-            this.groupBox2.Controls.Add(this.textBox84);
-            this.groupBox2.Controls.Add(this.textBox74);
-            this.groupBox2.Controls.Add(this.textBox64);
-            this.groupBox2.Controls.Add(this.textBox54);
-            this.groupBox2.Controls.Add(this.textBox44);
-            this.groupBox2.Controls.Add(this.textBox34);
-            this.groupBox2.Controls.Add(this.textBox24);
-            this.groupBox2.Controls.Add(this.textBox83);
-            this.groupBox2.Controls.Add(this.textBox73);
-            this.groupBox2.Controls.Add(this.textBox63);
-            this.groupBox2.Controls.Add(this.textBox53);
-            this.groupBox2.Controls.Add(this.textBox43);
-            this.groupBox2.Controls.Add(this.textBox33);
-            this.groupBox2.Controls.Add(this.textBox23);
-            this.groupBox2.Controls.Add(this.textBox82);
-            this.groupBox2.Controls.Add(this.textBox72);
-            this.groupBox2.Controls.Add(this.textBox62);
-            this.groupBox2.Controls.Add(this.textBox52);
-            this.groupBox2.Controls.Add(this.textBox42);
-            this.groupBox2.Controls.Add(this.textBox32);
-            this.groupBox2.Controls.Add(this.textBox22);
-            this.groupBox2.Controls.Add(this.textBox81);
-            this.groupBox2.Controls.Add(this.textBox71);
-            this.groupBox2.Controls.Add(this.textBox61);
-            this.groupBox2.Controls.Add(this.textBox51);
-            this.groupBox2.Controls.Add(this.textBox41);
-            this.groupBox2.Controls.Add(this.textBox31);
-            this.groupBox2.Controls.Add(this.textBox21);
-            this.groupBox2.Controls.Add(this.textBox80);
-            this.groupBox2.Controls.Add(this.textBox70);
-            this.groupBox2.Controls.Add(this.textBox60);
-            this.groupBox2.Controls.Add(this.textBox50);
-            this.groupBox2.Controls.Add(this.textBox40);
-            this.groupBox2.Controls.Add(this.textBox30);
-            this.groupBox2.Controls.Add(this.textBox20);
-            this.groupBox2.Controls.Add(this.textBox18);
-            this.groupBox2.Controls.Add(this.textBox15);
-            this.groupBox2.Controls.Add(this.textBox12);
-            this.groupBox2.Controls.Add(this.textBox08);
-            this.groupBox2.Controls.Add(this.textBox05);
-            this.groupBox2.Controls.Add(this.textBox02);
-            this.groupBox2.Controls.Add(this.textBox17);
-            this.groupBox2.Controls.Add(this.textBox07);
-            this.groupBox2.Controls.Add(this.textBox14);
-            this.groupBox2.Controls.Add(this.textBox04);
-            this.groupBox2.Controls.Add(this.textBox11);
-            this.groupBox2.Controls.Add(this.textBox16);
-            this.groupBox2.Controls.Add(this.textBox01);
-            this.groupBox2.Controls.Add(this.textBox13);
-            this.groupBox2.Controls.Add(this.textBox06);
-            this.groupBox2.Controls.Add(this.textBox03);
-            this.groupBox2.Controls.Add(this.textBox10);
-            this.groupBox2.Controls.Add(this.textBox00);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(534, 529);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Sudoku";
+            this.groupBoxSudoku.Controls.Add(this.label17);
+            this.groupBoxSudoku.Controls.Add(this.label14);
+            this.groupBoxSudoku.Controls.Add(this.label11);
+            this.groupBoxSudoku.Controls.Add(this.label16);
+            this.groupBoxSudoku.Controls.Add(this.label15);
+            this.groupBoxSudoku.Controls.Add(this.label13);
+            this.groupBoxSudoku.Controls.Add(this.label12);
+            this.groupBoxSudoku.Controls.Add(this.label10);
+            this.groupBoxSudoku.Controls.Add(this.label9);
+            this.groupBoxSudoku.Controls.Add(this.label6);
+            this.groupBoxSudoku.Controls.Add(this.label3);
+            this.groupBoxSudoku.Controls.Add(this.label18);
+            this.groupBoxSudoku.Controls.Add(this.label8);
+            this.groupBoxSudoku.Controls.Add(this.label7);
+            this.groupBoxSudoku.Controls.Add(this.label5);
+            this.groupBoxSudoku.Controls.Add(this.label4);
+            this.groupBoxSudoku.Controls.Add(this.label2);
+            this.groupBoxSudoku.Controls.Add(this.label1);
+            this.groupBoxSudoku.Controls.Add(this.textBox88);
+            this.groupBoxSudoku.Controls.Add(this.textBox78);
+            this.groupBoxSudoku.Controls.Add(this.textBox68);
+            this.groupBoxSudoku.Controls.Add(this.textBox58);
+            this.groupBoxSudoku.Controls.Add(this.textBox48);
+            this.groupBoxSudoku.Controls.Add(this.textBox38);
+            this.groupBoxSudoku.Controls.Add(this.textBox28);
+            this.groupBoxSudoku.Controls.Add(this.textBox87);
+            this.groupBoxSudoku.Controls.Add(this.textBox77);
+            this.groupBoxSudoku.Controls.Add(this.textBox67);
+            this.groupBoxSudoku.Controls.Add(this.textBox57);
+            this.groupBoxSudoku.Controls.Add(this.textBox47);
+            this.groupBoxSudoku.Controls.Add(this.textBox37);
+            this.groupBoxSudoku.Controls.Add(this.textBox27);
+            this.groupBoxSudoku.Controls.Add(this.textBox86);
+            this.groupBoxSudoku.Controls.Add(this.textBox76);
+            this.groupBoxSudoku.Controls.Add(this.textBox66);
+            this.groupBoxSudoku.Controls.Add(this.textBox56);
+            this.groupBoxSudoku.Controls.Add(this.textBox46);
+            this.groupBoxSudoku.Controls.Add(this.textBox36);
+            this.groupBoxSudoku.Controls.Add(this.textBox26);
+            this.groupBoxSudoku.Controls.Add(this.textBox85);
+            this.groupBoxSudoku.Controls.Add(this.textBox75);
+            this.groupBoxSudoku.Controls.Add(this.textBox65);
+            this.groupBoxSudoku.Controls.Add(this.textBox55);
+            this.groupBoxSudoku.Controls.Add(this.textBox45);
+            this.groupBoxSudoku.Controls.Add(this.textBox35);
+            this.groupBoxSudoku.Controls.Add(this.textBox25);
+            this.groupBoxSudoku.Controls.Add(this.textBox84);
+            this.groupBoxSudoku.Controls.Add(this.textBox74);
+            this.groupBoxSudoku.Controls.Add(this.textBox64);
+            this.groupBoxSudoku.Controls.Add(this.textBox54);
+            this.groupBoxSudoku.Controls.Add(this.textBox44);
+            this.groupBoxSudoku.Controls.Add(this.textBox34);
+            this.groupBoxSudoku.Controls.Add(this.textBox24);
+            this.groupBoxSudoku.Controls.Add(this.textBox83);
+            this.groupBoxSudoku.Controls.Add(this.textBox73);
+            this.groupBoxSudoku.Controls.Add(this.textBox63);
+            this.groupBoxSudoku.Controls.Add(this.textBox53);
+            this.groupBoxSudoku.Controls.Add(this.textBox43);
+            this.groupBoxSudoku.Controls.Add(this.textBox33);
+            this.groupBoxSudoku.Controls.Add(this.textBox23);
+            this.groupBoxSudoku.Controls.Add(this.textBox82);
+            this.groupBoxSudoku.Controls.Add(this.textBox72);
+            this.groupBoxSudoku.Controls.Add(this.textBox62);
+            this.groupBoxSudoku.Controls.Add(this.textBox52);
+            this.groupBoxSudoku.Controls.Add(this.textBox42);
+            this.groupBoxSudoku.Controls.Add(this.textBox32);
+            this.groupBoxSudoku.Controls.Add(this.textBox22);
+            this.groupBoxSudoku.Controls.Add(this.textBox81);
+            this.groupBoxSudoku.Controls.Add(this.textBox71);
+            this.groupBoxSudoku.Controls.Add(this.textBox61);
+            this.groupBoxSudoku.Controls.Add(this.textBox51);
+            this.groupBoxSudoku.Controls.Add(this.textBox41);
+            this.groupBoxSudoku.Controls.Add(this.textBox31);
+            this.groupBoxSudoku.Controls.Add(this.textBox21);
+            this.groupBoxSudoku.Controls.Add(this.textBox80);
+            this.groupBoxSudoku.Controls.Add(this.textBox70);
+            this.groupBoxSudoku.Controls.Add(this.textBox60);
+            this.groupBoxSudoku.Controls.Add(this.textBox50);
+            this.groupBoxSudoku.Controls.Add(this.textBox40);
+            this.groupBoxSudoku.Controls.Add(this.textBox30);
+            this.groupBoxSudoku.Controls.Add(this.textBox20);
+            this.groupBoxSudoku.Controls.Add(this.textBox18);
+            this.groupBoxSudoku.Controls.Add(this.textBox15);
+            this.groupBoxSudoku.Controls.Add(this.textBox12);
+            this.groupBoxSudoku.Controls.Add(this.textBox08);
+            this.groupBoxSudoku.Controls.Add(this.textBox05);
+            this.groupBoxSudoku.Controls.Add(this.textBox02);
+            this.groupBoxSudoku.Controls.Add(this.textBox17);
+            this.groupBoxSudoku.Controls.Add(this.textBox07);
+            this.groupBoxSudoku.Controls.Add(this.textBox14);
+            this.groupBoxSudoku.Controls.Add(this.textBox04);
+            this.groupBoxSudoku.Controls.Add(this.textBox11);
+            this.groupBoxSudoku.Controls.Add(this.textBox16);
+            this.groupBoxSudoku.Controls.Add(this.textBox01);
+            this.groupBoxSudoku.Controls.Add(this.textBox13);
+            this.groupBoxSudoku.Controls.Add(this.textBox06);
+            this.groupBoxSudoku.Controls.Add(this.textBox03);
+            this.groupBoxSudoku.Controls.Add(this.textBox10);
+            this.groupBoxSudoku.Controls.Add(this.textBox00);
+            this.groupBoxSudoku.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxSudoku.Name = "groupBoxSudoku";
+            this.groupBoxSudoku.Size = new System.Drawing.Size(534, 529);
+            this.groupBoxSudoku.TabIndex = 6;
+            this.groupBoxSudoku.TabStop = false;
+            this.groupBoxSudoku.Text = "Sudoku Puzzle";
             // 
             // label17
             // 
@@ -1150,29 +1148,29 @@
             this.textBox00.Size = new System.Drawing.Size(45, 45);
             this.textBox00.TabIndex = 51;
             // 
-            // groupBox3
+            // groupBoxHint
             // 
-            this.groupBox3.AutoSize = true;
-            this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Location = new System.Drawing.Point(552, 320);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(236, 221);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Hint";
+            this.groupBoxHint.AutoSize = true;
+            this.groupBoxHint.Controls.Add(this.label19);
+            this.groupBoxHint.Location = new System.Drawing.Point(552, 320);
+            this.groupBoxHint.Name = "groupBoxHint";
+            this.groupBoxHint.Size = new System.Drawing.Size(236, 221);
+            this.groupBoxHint.TabIndex = 7;
+            this.groupBoxHint.TabStop = false;
+            this.groupBoxHint.Text = "Hint";
             // 
-            // groupBox4
+            // groupBoxGenerator
             // 
-            this.groupBox4.AutoSize = true;
-            this.groupBox4.Controls.Add(this.label21);
-            this.groupBox4.Controls.Add(this.label20);
-            this.groupBox4.Controls.Add(this.comboBox1);
-            this.groupBox4.Location = new System.Drawing.Point(552, 152);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(236, 162);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Generator";
+            this.groupBoxGenerator.AutoSize = true;
+            this.groupBoxGenerator.Controls.Add(this.label21);
+            this.groupBoxGenerator.Controls.Add(this.label20);
+            this.groupBoxGenerator.Controls.Add(this.comboBox1);
+            this.groupBoxGenerator.Location = new System.Drawing.Point(552, 152);
+            this.groupBoxGenerator.Name = "groupBoxGenerator";
+            this.groupBoxGenerator.Size = new System.Drawing.Size(236, 162);
+            this.groupBoxGenerator.TabIndex = 8;
+            this.groupBoxGenerator.TabStop = false;
+            this.groupBoxGenerator.Text = "Generator";
             // 
             // label21
             // 
@@ -1208,23 +1206,17 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // statusStrip1
+            // linkLabel1
             // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel2});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 555);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(800, 26);
-            this.statusStrip1.TabIndex = 9;
-            this.statusStrip1.Text = "Status";
-            // 
-            // toolStripStatusLabel2
-            // 
-            this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(252, 20);
-            this.toolStripStatusLabel2.Text = "Sudoku Solver - Mehdi Salmanzadeh";
-            this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.linkLabel1.Location = new System.Drawing.Point(10, 551);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(260, 20);
+            this.linkLabel1.TabIndex = 9;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Sudoku Solver - Mehdi Salamanzadeh";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Form1
             // 
@@ -1232,36 +1224,35 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(800, 581);
-            this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.groupBoxGenerator);
+            this.Controls.Add(this.groupBoxHint);
+            this.Controls.Add(this.groupBoxSudoku);
+            this.Controls.Add(this.groupBoxControls);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.Padding = new System.Windows.Forms.Padding(10, 0, 0, 10);
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Sudoku Solver";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.groupBoxControls.ResumeLayout(false);
+            this.groupBoxControls.PerformLayout();
+            this.groupBoxSudoku.ResumeLayout(false);
+            this.groupBoxSudoku.PerformLayout();
+            this.groupBoxHint.ResumeLayout(false);
+            this.groupBoxGenerator.ResumeLayout(false);
+            this.groupBoxGenerator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private Button SolveButton;
+        private Button BtnSolve;
         private Button BtnReset;
         private Label label19;
-        private GroupBox groupBox1;
-        private GroupBox groupBox2;
+        private GroupBox groupBoxControls;
+        private GroupBox groupBoxSudoku;
         private Label label17;
         private Label label14;
         private Label label11;
@@ -1361,14 +1352,13 @@
         private TextBox textBox03;
         private TextBox textBox10;
         private TextBox textBox00;
-        private GroupBox groupBox3;
-        private GroupBox groupBox4;
+        private GroupBox groupBoxHint;
+        private GroupBox groupBoxGenerator;
         private Label label20;
         private ComboBox comboBox1;
         private Label label21;
-        private StatusStrip statusStrip1;
         private Label label23;
         private Label label22;
-        private ToolStripStatusLabel toolStripStatusLabel2;
+        private LinkLabel linkLabel1;
     }
 }
