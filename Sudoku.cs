@@ -29,7 +29,7 @@ namespace SudokuSolver
         private bool SolveSudoku(int row, int col)
         {
             // Find the next empty cell in the grid
-            if (!FindEmptyCell(ref row, ref col))
+            if (!FindEmptyCell(ref row, ref col))// ref makes original row and col change
             {
                 return true; // If no empty cell found, the puzzle is solved
             }

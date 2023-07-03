@@ -89,8 +89,6 @@ namespace SudokuSolver
 
             LoadSudokuPuzzle(0);
 
-            comboBox1.SelectedIndex = 0;
-
             grid = new Sudoku();
         }
 
@@ -146,7 +144,7 @@ namespace SudokuSolver
             }
             else
             {
-                MessageBox.Show("Inputs must be a number between 1 and 9.");
+                MessageBox.Show("Inputs must be a number between 1 and 9.", "Sudoku Solver");
             }
         }
 
@@ -246,27 +244,12 @@ namespace SudokuSolver
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Determine the selected puzzle level and load the corresponding puzzle
+            // Load puzzle
             int selectedLevel = comboBox1.SelectedIndex;
             LoadSudokuPuzzle(selectedLevel);
 
-            // Update the sudokuLevel variable to reflect the selected level
+            // update puzzle
             sudokuLevel = selectedLevel;
-        }
-
-
-        private void MenuItemSolver_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStripStatusLabel2_Click(object sender, EventArgs e)
-        {
-            // Specify the URL to open
-            string url = "https://github.com/UNHOTOfficial/SudokuSolver";
-
-            // Start a new process to open the URL in a web browser
-            System.Diagnostics.Process.Start(url);
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
