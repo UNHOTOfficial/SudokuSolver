@@ -8,19 +8,28 @@ namespace SudokuSolver
 
         private void LoadSudokuPuzzle(int puzzleIndex)
         {
+            // Iterate over each row and column of the puzzle grid
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
+                    // Find the TextBox control corresponding to the current row and column
+                    string textBoxName = "textBox" + row + col;
+                    TextBox textBox = Controls.Find(textBoxName, true).FirstOrDefault() as TextBox;
+
+                    if (textBox != null)
                     {
-                        textBox.Text = sudokuPuzzles[puzzleIndex, row, col].ToString();
-                        textBox.ReadOnly = false;
+                        // Set the value of the TextBox to the corresponding puzzle value
+                        textBox.Text = sudokuPuzzles[puzzleIndex, row, col];
+                        textBox.ReadOnly = false; // Allow editing the TextBox
                     }
+
+                    // Update the status label to indicate that the puzzle is being loaded
                     UpdateStatusLabel("Loading Puzzle...");
                 }
             }
         }
+
 
         private readonly Sudoku grid;
 
@@ -102,37 +111,49 @@ namespace SudokuSolver
 
         private void InitializeTextBoxes()
         {
+            // Iterate over each row and column of the puzzle grid
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
+                    // Find the TextBox control corresponding to the current row and column
+                    string textBoxName = "textBox" + row + col;
+
+                    if (Controls.Find(textBoxName, true).FirstOrDefault() is TextBox textBox)
                     {
+                        // Set the font style and size for the TextBox
                         textBox.Font = new Font("Roboto", 9, FontStyle.Bold);
-                        if (textBox != null)
-                        {
-                            textBox.TextAlign = HorizontalAlignment.Center;
-                        }
+
+                        // Set the text alignment to center for the TextBox
+                        textBox.TextAlign = HorizontalAlignment.Center;
                     }
                     else
                     {
+                        // Display a message box indicating that an input can't be empty
                         MessageBox.Show("Inputs Can't Be Empty.");
                     }
                 }
             }
         }
+
         private void SolveButton_Click(object sender, EventArgs e)
         {
-            bool inputsStatus = CheckInputs();
-            if (inputsStatus == true)
+            // Check if inputs are valid
+            bool inputsValid = CheckInputs();
+
+            if (inputsValid)
             {
                 // Read the input grid from the text boxes
                 ReadGrid();
 
                 // Solve the Sudoku puzzle
-                if (grid.Solve())
+                bool puzzleSolved = grid.Solve();
+
+                if (puzzleSolved)
                 {
+                    // Update the grid with the solved puzzle
                     UpdateGrid();
+
                     MessageBox.Show("Sudoku puzzle solved successfully!", "Sudoku Solver");
                 }
                 else
@@ -142,9 +163,10 @@ namespace SudokuSolver
             }
             else
             {
-                MessageBox.Show("Inputs can't be greater than 9.");
+                MessageBox.Show("Inputs must be a number between 1 and 9.");
             }
         }
+
 
         private bool CheckInputs()
         {
@@ -152,17 +174,14 @@ namespace SudokuSolver
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
-                    if (textBox?.Text != null && textBox.Text != "")
+                    TextBox? textBox = Controls.Find("textBox" + row + col, true).FirstOrDefault() as TextBox;
+
+                    if (textBox != null)
                     {
-                        if (!int.TryParse(textBox.Text, out int value) || value > 9)
+                        if (!int.TryParse(textBox.Text, out int value) || value > 9 || string.IsNullOrEmpty(textBox.Text))
                         {
                             return false; // Invalid input found, return false immediately
                         }
-                    }
-                    else
-                    {
-                        // Empty or null input found, return false immediately
                     }
                 }
             }
@@ -171,40 +190,49 @@ namespace SudokuSolver
         }
 
 
+
+
         private void ReadGrid()
         {
             UpdateStatusLabel("Solving...");
+
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
                 {
                     TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
+
+                    // Check if the textBox is not null or empty
                     if (!string.IsNullOrEmpty(textBox?.Text))
                     {
+                        // Parse the value from the textBox and set it in the grid
                         grid.SetCell(row, col, int.Parse(textBox.Text));
                     }
                     else
                     {
+                        // If the textBox is null or empty, set the cell value to 0
                         grid.SetCell(row, col, 0);
                     }
                 }
             }
         }
 
+
         private void UpdateGrid()
         {
             UpdateStatusLabel("Solving...");
+
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
+                    TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
+
+                    // Check if textBox is not null
+                    if (textBox != null)
                     {
                         textBox.Text = grid.GetCell(row, col).ToString();
-                        if (textBox != null)
-                        {
-                            textBox.ReadOnly = true;
-                        }
+                        textBox.ReadOnly = true;
                     }
                     else
                     {
@@ -212,34 +240,27 @@ namespace SudokuSolver
                     }
                 }
             }
-            UpdateStatusLabel("Idle");
 
+            UpdateStatusLabel("Idle");
         }
+
 
         private void UpdateStatusLabel(string text)
         {
+            // Update the status label text
             toolStripStatusLabel1.Text = text;
         }
+
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
             UpdateStatusLabel("Resetting...");
-            switch (sudokuLevel)
-            {
-                case 1:
-                    LoadSudokuPuzzle(0);
-                    break;
-                case 2:
-                    LoadSudokuPuzzle(2);
-                    break;
-                case 3:
-                    LoadSudokuPuzzle(3);
-                    break;
-                case 4:
-                    LoadSudokuPuzzle(4);
-                    break;
 
-            }
+            // Load the appropriate puzzle based on the Sudoku level
+            int puzzleIndex = sudokuLevel;
+            LoadSudokuPuzzle(puzzleIndex);
+
+            // Reset the text boxes to be editable
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
@@ -248,43 +269,27 @@ namespace SudokuSolver
                     {
                         textBox.ReadOnly = false;
                     }
-
                 }
             }
-            UpdateStatusLabel("Idle");
 
+            UpdateStatusLabel("Idle");
         }
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateStatusLabel("Loading Puzzle...");
-            switch (comboBox1.SelectedIndex)
-            {
-                case 0:
-                    LoadSudokuPuzzle(0);
-                    sudokuLevel = 0;
-                    break;
-                case 1:
-                    LoadSudokuPuzzle(1);
-                    sudokuLevel = 1;
-                    break;
-                case 2:
-                    LoadSudokuPuzzle(2);
-                    sudokuLevel = 2;
-                    break;
-                case 3:
-                    LoadSudokuPuzzle(3);
-                    sudokuLevel = 3;
-                    break;
-                case 4:
-                    LoadSudokuPuzzle(4);
-                    sudokuLevel = 4;
-                    break;
 
-            }
+            // Determine the selected puzzle level and load the corresponding puzzle
+            int selectedLevel = comboBox1.SelectedIndex;
+            LoadSudokuPuzzle(selectedLevel);
+
+            // Update the sudokuLevel variable to reflect the selected level
+            sudokuLevel = selectedLevel;
+
             UpdateStatusLabel("Idle");
-
         }
+
 
         private void MenuItemSolver_Click(object sender, EventArgs e)
         {
@@ -293,8 +298,12 @@ namespace SudokuSolver
 
         private void toolStripStatusLabel2_Click(object sender, EventArgs e)
         {
+            // Specify the URL to open
             string url = "https://github.com/UNHOTOfficial/SudokuSolver";
+
+            // Start a new process to open the URL in a web browser
             System.Diagnostics.Process.Start(url);
         }
+
     }
 }
