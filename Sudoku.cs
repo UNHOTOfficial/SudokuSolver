@@ -9,22 +9,22 @@
             grid = new int[9, 9]; // Initialize the Sudoku grid as a 9x9 array
         }
 
-        public void SetCell(int row, int col, int value)
+        public void FillCell(int row, int col, int value)
         {
             grid[row, col] = value; // Set the value of a cell in the grid
         }
 
-        public int GetCell(int row, int col)
+        public int ReadCell(int row, int col)
         {
             return grid[row, col]; // Get the value of a cell in the grid
         }
 
-        public bool Solve()
+        public bool SolveSudokuPuzzle()
         {
-            return SolveSudoku(0, 0); // Solve the Sudoku puzzle
+            return SolveSudokuHelper(0, 0); // Solve the Sudoku puzzle
         }
 
-        private bool SolveSudoku(int row, int col)
+        private bool SolveSudokuHelper(int row, int col)
         {
             // Find the next empty cell in the grid
             if (!FindEmptyCell(ref row, ref col))// ref makes original row and col change
@@ -35,11 +35,11 @@
             // Try different numbers from 1 to 9 in the empty cell
             for (int num = 1; num <= 9; num++)
             {
-                if (IsSafe(row, col, num))
+                if (IsNumberSafe(row, col, num))
                 {
                     grid[row, col] = num; // Place the number in the cell
 
-                    if (SolveSudoku(row, col))
+                    if (SolveSudokuHelper(row, col))
                     {
                         return true; // solve the puzzle
                     }
@@ -68,7 +68,7 @@
             return false; // No empty cell found
         }
 
-        private bool IsSafe(int row, int col, int num)
+        private bool IsNumberSafe(int row, int col, int num)
         {
             // Check if it is safe to place the number in the given cell
 

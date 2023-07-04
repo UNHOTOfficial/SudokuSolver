@@ -92,10 +92,10 @@ namespace SudokuSolver
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            InitializeTextBoxes();
+            SetTextBoxStyles();
         }
 
-        private void InitializeTextBoxes()
+        private void SetTextBoxStyles()
         {
             for (int row = 0; row < 9; row++)
             {
@@ -123,15 +123,15 @@ namespace SudokuSolver
             if (inputsValid)
             {
                 // Read the input grid from the text boxes
-                ReadGrid();
+                ReadTextBoxes();
 
                 // Solve the Sudoku puzzle
-                bool puzzleSolved = grid.Solve();
+                bool puzzleSolved = grid.SolveSudokuPuzzle();
 
                 if (puzzleSolved)
                 {
                     // Update the grid with the solved puzzle
-                    UpdateGrid();
+                    UpdateTextBoxes();
 
                     MessageBox.Show("Sudoku puzzle solved successfully!", "Sudoku Solver");
                 }
@@ -173,7 +173,7 @@ namespace SudokuSolver
 
 
 
-        private void ReadGrid()
+        private void ReadTextBoxes()
         {
             for (int row = 0; row < 9; row++)
             {
@@ -185,30 +185,28 @@ namespace SudokuSolver
                     if (!string.IsNullOrEmpty(textBox?.Text))
                     {
                         // Parse the value from the textBox and set it in the grid
-                        grid.SetCell(row, col, int.Parse(textBox.Text));
+                        grid.FillCell(row, col, int.Parse(textBox.Text));
                     }
                     else
                     {
                         // If the textBox is null or empty, set the cell value to 0
-                        grid.SetCell(row, col, 0);
+                        grid.FillCell(row, col, 0);
                     }
                 }
             }
         }
 
 
-        private void UpdateGrid()
+        private void UpdateTextBoxes()
         {
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
-
                     // Check if textBox is not null
-                    if (textBox != null)
+                    if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
                     {
-                        textBox.Text = grid.GetCell(row, col).ToString();
+                        textBox.Text = grid.ReadCell(row, col).ToString();
                         textBox.ReadOnly = true;
                     }
                     else
