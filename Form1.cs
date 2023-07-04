@@ -91,6 +91,7 @@ namespace SudokuSolver
 
 
             LoadSudokuPuzzle(0);
+            comboBox1.SelectedIndex= 0;
 
             grid = new Sudoku();
         }
