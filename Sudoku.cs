@@ -2,21 +2,21 @@
 {
     internal class Sudoku
     {
-        private int[,] grid;
+        private int[,] board;
 
         public Sudoku()
         {
-            grid = new int[9, 9]; // Initialize the Sudoku grid as a 9x9 array
+            board = new int[9, 9]; // Initialize the Sudoku grid as a 9x9 array
         }
 
         public void FillCell(int row, int col, int value)
         {
-            grid[row, col] = value; // Set the value of a cell in the grid
+            board[row, col] = value; // Set the value of a cell in the grid
         }
 
         public int ReadCell(int row, int col)
         {
-            return grid[row, col]; // Get the value of a cell in the grid
+            return board[row, col]; // Get the value of a cell in the grid
         }
 
         public bool SolveSudokuPuzzle()
@@ -37,14 +37,14 @@
             {
                 if (IsNumberSafe(row, col, num))
                 {
-                    grid[row, col] = num; // Place the number in the cell
+                    board[row, col] = num; // Place the number in the cell
 
                     if (SolveSudokuHelper(row, col))
                     {
                         return true; // solve the puzzle
                     }
 
-                    grid[row, col] = 0; // reset the cell if the solution is not valid
+                    board[row, col] = 0; // reset the cell if the solution is not valid
                 }
             }
 
@@ -58,7 +58,7 @@
             {
                 for (col = 0; col < 9; col++)
                 {
-                    if (grid[row, col] == 0)
+                    if (board[row, col] == 0)
                     {
                         return true; // Found an empty cell
                     }
@@ -75,7 +75,7 @@
             // Check row and column for the same number
             for (int i = 0; i < 9; i++)
             {
-                if (grid[row, i] == num || grid[i, col] == num)
+                if (board[row, i] == num || board[i, col] == num)
                 {
                     return false; // Number already exists in the row or column
                 }
@@ -88,7 +88,7 @@
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    if (grid[subGridRow + i, subGridCol + j] == num)
+                    if (board[subGridRow + i, subGridCol + j] == num)
                     {
                         return false; // Number already exists in the subgrid
                     }

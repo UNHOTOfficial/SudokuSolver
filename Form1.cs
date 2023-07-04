@@ -252,16 +252,14 @@ namespace SudokuSolver
         {
             string url = "https://github.com/UNHOTOfficial/SudokuSolver";
 
-            System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo
+            System.Diagnostics.ProcessStartInfo psi = new()
             {
                 FileName = url,
                 UseShellExecute = true
             };
-            using (System.Diagnostics.Process process = new System.Diagnostics.Process())
-            {
-                process.StartInfo = psi;
-                process.Start();
-            }
+            using System.Diagnostics.Process process = new();
+            process.StartInfo = psi;
+            process.Start();
         }
     }
 }
