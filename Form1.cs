@@ -6,6 +6,11 @@ namespace SudokuSolver
         private readonly string[,,] sudokuPuzzles = new string[5, 9, 9];
         private int sudokuLevel;
 
+        private TextBox FindTextBoxByName(string name)
+        {
+            return Controls.Find(name, true).FirstOrDefault() as TextBox;
+        }
+
         private void LoadSudokuPuzzle(int puzzleIndex)
         {
             for (int row = 0; row < 9; row++)
@@ -146,21 +151,16 @@ namespace SudokuSolver
             }
         }
 
-
         private bool CheckInputs()
         {
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
-                    if (textBox?.Text != null && textBox.Text != "")
+                    TextBox textBox = FindTextBoxByName("textBox" + row + col);
+                    if (textBox != null && !string.IsNullOrEmpty(textBox.Text))
                     {
                         if (!int.TryParse(textBox.Text, out int value) || value > 9)
-                        {
-                            return false;
-                        }
-                        else if (string.IsNullOrEmpty(textBox.Text))
                         {
                             return false;
                         }
@@ -171,18 +171,16 @@ namespace SudokuSolver
             return true; // No invalid inputs found
         }
 
-
-
         private void ReadTextBoxes()
         {
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    TextBox? textBox = Controls.Find("textBox" + row + col, true)[0] as TextBox;
+                    TextBox textBox = FindTextBoxByName("textBox" + row + col);
 
                     // Check if the textBox is not null or empty
-                    if (!string.IsNullOrEmpty(textBox?.Text))
+                    if (textBox != null && !string.IsNullOrEmpty(textBox.Text))
                     {
                         // Parse the value from the textBox and set it in the grid
                         grid.FillCell(row, col, int.Parse(textBox.Text));
@@ -196,15 +194,14 @@ namespace SudokuSolver
             }
         }
 
-
         private void UpdateTextBoxes()
         {
             for (int row = 0; row < 9; row++)
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    // Check if textBox is not null
-                    if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
+                    TextBox textBox = FindTextBoxByName("textBox" + row + col);
+                    if (textBox != null)
                     {
                         textBox.Text = grid.ReadCell(row, col).ToString();
                         textBox.ReadOnly = true;
@@ -217,7 +214,6 @@ namespace SudokuSolver
             }
         }
 
-
         private void BtnReset_Click(object sender, EventArgs e)
         {
             // Load the appropriate puzzle based on the Sudoku level
@@ -229,7 +225,8 @@ namespace SudokuSolver
             {
                 for (int col = 0; col < 9; col++)
                 {
-                    if (Controls.Find("textBox" + row + col, true)[0] is TextBox textBox)
+                    TextBox textBox = FindTextBoxByName("textBox" + row + col);
+                    if (textBox != null)
                     {
                         textBox.ReadOnly = false;
                     }
@@ -237,14 +234,13 @@ namespace SudokuSolver
             }
         }
 
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Load puzzle
             int selectedLevel = comboBox1.SelectedIndex;
             LoadSudokuPuzzle(selectedLevel);
 
-            // update puzzle
+            // Update puzzle
             sudokuLevel = selectedLevel;
         }
 
@@ -252,14 +248,16 @@ namespace SudokuSolver
         {
             string url = "https://github.com/UNHOTOfficial/SudokuSolver";
 
-            System.Diagnostics.ProcessStartInfo psi = new()
+            System.Diagnostics.ProcessStartInfo psi = new System.Diagnostics.ProcessStartInfo
             {
                 FileName = url,
                 UseShellExecute = true
             };
-            using System.Diagnostics.Process process = new();
-            process.StartInfo = psi;
-            process.Start();
+            using (System.Diagnostics.Process process = new System.Diagnostics.Process())
+            {
+                process.StartInfo = psi;
+                process.Start();
+            }
         }
     }
 }
